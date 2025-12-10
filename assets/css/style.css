@@ -7130,7 +7130,7 @@ div#mCSB_1_container{
 
 .contact-style-two{
   position: relative;
-  padding: 150px 0px 150px 0px;
+  padding: 0px 0px 10px 0px;
 }
 
 .contact-style-two h3{
@@ -7210,7 +7210,7 @@ div#mCSB_1_container{
 
 .google-map-section{
   position: relative;
-  padding-bottom: 150px;
+  padding-bottom: 10px;
 }
 
 .google-map-section #contact-google-map{

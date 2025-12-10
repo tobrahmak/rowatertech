@@ -206,33 +206,97 @@ A.P Pincode : 524004</p>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-12 col-sm-12 form-column">
-                        <div class="form-inner">
-                            <h3>Leave a Comment</h3>
-                            <form method="post" action="https://azim.commonsupport.com/BlueBox /sendemail.php" id="contact-form" class="default-form"> 
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="text" name="username" placeholder="Your Name" required="">
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="email" name="email" placeholder="Email Address" required="">
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="phone" required="" placeholder="Phone Number">
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="subject" required="" placeholder="Subject">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <textarea name="message" placeholder="Leave A Comment"></textarea>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                        <button class="theme-btn btn-one" type="submit" name="submit-form">Submit Now</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                  <div class="col-lg-7 col-md-12 col-sm-12 form-column">
+    <div class="form-inner">
+        <h3>Leave a Comment</h3>
+
+        <form method="post" action="#" id="contact-form" class="default-form"> 
+            <div class="row clearfix">
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="text" name="username" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="email" name="email" placeholder="Email Address" required="">
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                    <input type="text" name="phone" required="" placeholder="Phone Number">
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                    <input type="text" name="subject" required="" placeholder="Subject">
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <textarea name="message" placeholder="Leave A Comment"></textarea>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                    <button class="theme-btn btn-one" type="submit" name="submit-form">Submit Now</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ✅ Add This Script (No Design Change) -->
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let name = document.querySelector("input[name='username']").value.trim();
+    let email = document.querySelector("input[name='email']").value.trim();
+    let phone = document.querySelector("input[name='phone']").value.trim();
+    let subject = document.querySelector("input[name='subject']").value.trim();
+    let message = document.querySelector("textarea[name='message']").value.trim();
+
+    // ---------------- VALIDATION ----------------
+    if (name === "" || email === "" || phone === "" || subject === "") {
+        alert("⚠ Please fill all required fields.");
+        return;
+    }
+
+    // email check
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("⚠ Please enter a valid email address.");
+        return;
+    }
+
+    // phone check
+    if (phone.length < 10) {
+        alert("⚠ Please enter a valid phone number.");
+        return;
+    }
+
+    // WhatsApp number
+    let whatsappNumber = "919493456455";
+
+    // ---------------- MESSAGE FORMAT ----------------
+    let whatsappMessage =
+        "📩 *New Comment Submission* %0A%0A" +
+        "👤 *Name:* " + name + "%0A" +
+        "📧 *Email:* " + email + "%0A" +
+        "📱 *Phone:* " + phone + "%0A" +
+        "📝 *Subject:* " + subject + "%0A" +
+        "💬 *Message:* " + message;
+
+    // WhatsApp URL
+    let url = "https://wa.me/" + whatsappNumber + "?text=" + whatsappMessage;
+
+    // open WhatsApp
+    window.open(url, "_blank");
+
+    // Success popup + auto refresh
+    setTimeout(() => {
+        alert("✅ Your message is ready in WhatsApp!\nWe will contact you soon.");
+        window.location.reload();
+    }, 2000);
+});
+</script>
+
                 </div>
             </div>
         </section>
