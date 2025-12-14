@@ -2739,7 +2739,7 @@ div#mCSB_1_container{
 
 .main-footer .logo-widget .footer-logo{
   position: relative;
-  margin-bottom: 37px;
+  margin-bottom: 30px;
 }
 
 .main-footer .logo-widget .text{
@@ -4917,7 +4917,7 @@ div#mCSB_1_container{
 
 .service-details{
   position: relative;
-  padding: 150px 0px;
+  padding: 50px 0px;
 }
 
 .service-details-content{
@@ -4930,12 +4930,12 @@ div#mCSB_1_container{
   font-size: 40px;
   line-height: 50px;
   font-weight: 700;
-  margin-bottom: 31px;
+  margin-bottom: 10px;
 }
 
 .service-details-content .content-one .text{
   position: relative;
-  margin-bottom: 73px;
+  margin-bottom: 20px;
 }
 
 .service-details-content img{
